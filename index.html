@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Dynamic Input</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -15,22 +16,22 @@
 
 	<div class="container-fluid mt-4 p-5" style="text-align: center;">
 		<div class="row justify-content-center">
-			<div class="col-6">
+			<div class="col-12 col-sm-10 col-md-10 col-lg-6">
 				<h5 style="display: inline-block;">Daily Income</h5> <button class="btn btn-info" style="float: right;" onclick="add_more()">Add</button>
 				
 				<table class="table mt-3" style="width: 100%;" id="wrap">
 					<tr>
-							<th>SL</th>
-					  		<th>Purpose</th>
-					   		<th>Amount</th>
-					   		<th></th>
+							<th scope="col">SL</th>
+					  		<th scope="col">Purpose</th>
+					   		<th scope="col">Amount</th>
+					   		<th scope="col"></th>
 					</tr>
 
 				
 					   
 				</table>
 			</div>
-			<div class="col-6 before-border">
+			<div class="col-12 col-sm-10 col-md-10 col-lg-6 before-border">
 				<h5 style="display: inline-block;">Daily Expense</h5> <button class="btn btn-info" style="float: right;" onclick="add_more2()">Add</button>
 	
 				<table class="table mt-3"  style="width: 100%;" id="wrap2">
@@ -61,7 +62,7 @@
 	function add_more(){
 
 	
-	jQuery("#wrap").append('<tr id="box_loop_'+box_count+'"><td>#'+box_count+'</td><td><input type="text"></td><td><input type="text"></td><td><input class="btn btn-danger" type="button" name="submit" id="submit" value="Remove" onclick=remove_more("'+box_count+'")></td></tr>'); box_count++;}
+	jQuery("#wrap").append('<tr id="box_loop_'+box_count+'"><td>#'+box_count+'</td><td><input type="text"></td><td ><input type="text" class="col-10"></td><td><input class="btn btn-danger" type="button" name="submit" id="submit" value="Remove" onclick=remove_more("'+box_count+'")></td></tr>'); box_count++;}
 	
     
 
@@ -75,19 +76,19 @@
 
 <script type="text/javascript">
 
-			var box_count=1;
+			var box_count1=1;
 	function add_more2(){
 
 	
-	jQuery("#wrap2").append('<tr id="box_loop_'+box_count+'"><td>#'+box_count+'</td><td><input type="text"></td><td><input type="text"></td><td><input class="btn btn-danger" type="button" name="submit" id="submit" value="Remove" onclick=remove_more("'+box_count+'")></td></tr>'); box_count++;}
+	jQuery("#wrap2").append('<tr id="box_loop_'+box_count1+'"><td>#'+box_count1+'</td><td><input type="text"></td><td><input type="text"></td><td><input class="btn btn-danger" type="button" name="submit" id="submit" value="Remove" onclick=remove_more("'+box_count1+'")></td></tr>'); box_count1++;}
 	
     
 
 	function remove_more(box_count){
-	jQuery("#box_loop_"+box_count).remove();
-	var box_count=jQuery("#box_count").val();
-	box_count--;
-	jQuery("#box_count").val(box_count);}
+	jQuery("#box_loop_"+box_count1).remove();
+	var box_count1=jQuery("#box_count").val();
+	box_count1--;
+	jQuery("#box_count").val(box_count1);}
 </script>
 
 </body>
