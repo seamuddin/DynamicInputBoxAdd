@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Input</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+    <div class="container d-flex justify-content-center mt-5">
+    	<button class="col-4 btn btn-info">Daily Transaction</button>
+    </div>
+
+
+	<div class="container-fluid mt-4 p-5" style="text-align: center;">
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<h5 style="display: inline-block;">Daily Income</h5> <button class="btn btn-info" style="float: right;" onclick="add_more()">Add</button>
+				
+				<table class="table mt-3" style="width: 100%;" id="wrap">
+					<tr>
+							<th>SL</th>
+					  		<th>Purpose</th>
+					   		<th>Amount</th>
+					   		<th></th>
+					</tr>
+
+				
+					   
+				</table>
+			</div>
+			<div class="col-6 before-border">
+				<h5 style="display: inline-block;">Daily Expense</h5> <button class="btn btn-info" style="float: right;" onclick="add_more2()">Add</button>
+	
+				<table class="table mt-3"  style="width: 100%;" id="wrap2">
+					<tr>
+							<th>SL</th>
+					  		<th>Purpose</th>
+					   		<th>Amount</th>
+					</tr>
+
+			
+					   
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+			var box_count=1;
+	function add_more(){
+
+	
+	jQuery("#wrap").append('<tr id="box_loop_'+box_count+'"><td>#'+box_count+'</td><td><input type="text"></td><td><input type="text"></td><td><input class="btn btn-danger" type="button" name="submit" id="submit" value="Remove" onclick=remove_more("'+box_count+'")></td></tr>'); box_count++;}
+	
+    
+
+	function remove_more(box_count){
+	jQuery("#box_loop_"+box_count).remove();
+	var box_count=jQuery("#box_count").val();
+	box_count--;
+	jQuery("#box_count").val(box_count);}
+</script>
+
+
+<script type="text/javascript">
+
+			var box_count=1;
+	function add_more2(){
+
+	
+	jQuery("#wrap2").append('<tr id="box_loop_'+box_count+'"><td>#'+box_count+'</td><td><input type="text"></td><td><input type="text"></td><td><input class="btn btn-danger" type="button" name="submit" id="submit" value="Remove" onclick=remove_more("'+box_count+'")></td></tr>'); box_count++;}
+	
+    
+
+	function remove_more(box_count){
+	jQuery("#box_loop_"+box_count).remove();
+	var box_count=jQuery("#box_count").val();
+	box_count--;
+	jQuery("#box_count").val(box_count);}
+</script>
+
+</body>
+</html>
